@@ -9,8 +9,8 @@ io.on('connection', (socket) => {
     });
     let eventName = 'simple chat message';
     let broadcast = (msg) => socket.broadcast.emit(eventName, msg);
-    socket.on(eventName, (msg, ackFn) => {
-        console.log('message: ' + msg);
+    socket.on(eventName, (msg) => {
+        console.log(msg);
         // broadcast to other clients after 1.5 seconds
         setTimeout(broadcast, 1500, msg);
     });

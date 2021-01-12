@@ -28,5 +28,6 @@ rl.question('Enter your username:', (name) => {
 
     socket.on(eventName, msg => {
         console.log(msg);
+        chat();
     });
 });
